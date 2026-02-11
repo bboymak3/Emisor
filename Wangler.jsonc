@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lonestar-texas",
+  "pages_build_output_dir": ".", // Indica que los archivos están en la raíz
+  "compatibility_date": "2026-02-10",
+  "deployment_scenes": {
+    "production": {
+      "routes": [
+        "lonestartexas.pages.dev"
+      ]
+    }
+  },
+  /**
+   * Configuración de Optimización
+   */
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  /**
+   * Variables de Entorno (Opcional)
+   * Útil si decides agregar un formulario de contacto con Workers después
+   */
+  "vars": {
+    "BUSINESS_NAME": "EMISOR Global Solutions",
+    "LOCATION": "Richardson, Texas",
+    "PHONE": "+1 214-708-3430"
+  }
+}
