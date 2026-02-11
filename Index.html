@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMISOR | Agencia de Publicidad & SEO Local en Texas</title>
+    <meta name="description" content="Expertos en SEO Local, Rotulado de Vehículos y Marketing Digital en Richardson, Texas. Servicio a domicilio 24/7. ¡Domina Google hoy!">
+    
+    <style>
+        :root {
+            --primary: #e2ff00; /* Amarillo Neón */
+            --secondary: #00e5ff; /* Azul Eléctrico */
+            --dark: #0a0a0a;
+            --light: #ffffff;
+            --gray: #1b1b1b;
+            --accent: #25d366; /* WhatsApp Green */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--dark); color: var(--light); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
+        .navbar { background: rgba(10, 10, 10, 0.98); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 50px; }
+        .nav-menu a { color: var(--light); text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
+        .nav-menu a:hover { color: var(--primary); }
+        .btn-nav { background: var(--primary); color: var(--dark) !important; padding: 10px 20px; border-radius: 5px; }
+
+        /* Hero Section */
+        .hero { height: 85vh; display: flex; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/trabajo1.jpg'); background-size: cover; background-position: center; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -1px; }
+        .text-highlight { color: var(--primary); }
+        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 35px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .btn-primary { background: var(--primary); color: var(--dark); padding: 18px 40px; text-decoration: none; border-radius: 5px; font-weight: 800; font-size: 1.1rem; display: inline-block; transition: 0.3s; }
+        .btn-primary:hover { background: var(--light); transform: scale(1.05); }
+
+        /* Categorías de Servicio (Google Business) */
+        .services-section { padding: 100px 0; background: var(--gray); }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; text-transform: uppercase; color: var(--primary); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: var(--dark); padding: 40px; border-radius: 12px; border: 1px solid #333; transition: 0.4s; }
+        .service-card:hover { border-color: var(--primary); transform: translateY(-10px); }
+        .service-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; text-transform: uppercase; }
+        .service-card p { font-size: 0.95rem; color: #bbb; }
+
+        /* Galería Integrada */
+        .gallery { padding: 100px 0; background: var(--dark); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .gallery-grid img { width: 100%; height: 280px; object-fit: cover; border-radius: 8px; border: 2px solid transparent; transition: 0.3s; }
+        .gallery-grid img:hover { border-color: var(--primary); transform: scale(1.02); }
+
+        /* FAQ Section (Optimización SEO) */
+        .faq-section { padding: 100px 0; background: var(--gray); }
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        .faq-item { background: var(--dark); padding: 35px; border-radius: 15px; margin-bottom: 30px; border-left: 6px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .faq-item h4 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
+        .faq-item p { color: #ddd; font-size: 1.05rem; line-height: 1.8; }
+
+        /* Footer */
+        footer { padding: 80px 0; text-align: center; background: var(--dark); border-top: 1px solid #333; }
+        .logo-footer { height: 70px; margin-bottom: 25px; }
+        .footer-info { color: #888; margin-bottom: 10px; font-size: 1rem; }
+        .copy { color: #555; font-size: 0.8rem; margin-top: 30px; }
+
+        /* Floating Elements */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 35px; z-index: 1000; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .nav-menu { display: none; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <img src="images/Logo2.png" alt="EMISOR Logo" class="logo">
+            <nav class="nav-menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Categorías</a>
+                <a href="#proyectos">Trabajos</a>
+                <a href="#faq">Preguntas</a>
+                <a href="https://wa.me/12147083430" class="btn-nav">Contacto Directo</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>Ilumina tu Marca en <span class="text-highlight">Texas</span></h1>
+            <p>Especialistas en soluciones globales de publicidad personalizada. Desde SEO Local hasta rotulados de alto impacto, estamos abiertos las 24 horas para potenciar tu presencia en Richardson y Dallas.</p>
+            <a href="https://wa.me/12147083430" class="btn-primary">¡COTIZAR MI PROYECTO!</a>
+        </div>
+    </section>
+
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Categorías de Servicio GMB</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Administración de Proyectos</h3>
+                    <p>Gestión integral de campañas publicitarias. Aseguramos que cada etapa de tu marca en Texas cumpla con altos estándares de calidad y tiempos de entrega.</p>
+                </div>
+                <div class="service-card">
+                    <h3>SEO LOCAL</h3>
+                    <p>Optimizamos tu Google Business Profile para dominar Richardson y Dallas. Posicionamiento estratégico diseñado para aumentar llamadas y visitas reales.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Rotulado de Camisetas</h3>
+                    <p>Personalización profesional de prendas con técnicas duraderas. Ideal para uniformes corporativos o eventos especiales en todo el estado.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Diseño de Prendas</h3>
+                    <p>Conceptos únicos para sweaters, hoodies y buzos. Unimos creatividad y estrategia para diseñar prendas que comunican tu identidad visual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Portafolio de Impacto</h2>
+            <div class="gallery-grid">
+                <img src="images/trabajo1.jpg" alt="Rotulado de Camionetas Texas">
+                <img src="images/trabajo2.jpg" alt="SEO Local Maps">
+                <img src="images/trabajo3.jpg" alt="Impresión Gran Formato">
+                <img src="images/trabajo4.jpg" alt="Hoodies Personalizados">
+                <img src="images/trabajo5.jpg" alt="Branding Corporativo">
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Dudas, Respuestas y Definiciones</h2>
+            <div class="faq-container">
+                
+                <div class="faq-item">
+                    <h4>¿Por qué mi negocio necesita SEO Local en Richardson?</h4>
+                    <p>Dominar los resultados de búsqueda local en Richardson y Dallas es vital. Optimizamos tu presencia en Google Maps para que los clientes locales te encuentren primero. Es un posicionamiento estratégico diseñado para convertir búsquedas digitales en visitas físicas y llamadas telefónicas reales.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>¿Qué es el Rotulado de Vehículos y qué alcance tiene?</h4>
+                    <p>El rotulado o "Vehicle Wrap" es publicidad móvil de alta fidelidad. Transformamos tu flota en vallas publicitarias que recorren Texas las 24 horas. Usamos materiales de alta resistencia para garantizar que tu marca brille con profesionalismo en cada carretera.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>¿Ofrecen servicios de Impresión a domicilio con confianza?</h4>
+                    <p>Sí. En EMISOR entendemos que el tiempo es tu recurso más valioso. Por ello, ofrecemos un servicio 100% a domicilio en Texas. Ya sean stickers, banners o material publicitario, nosotros vamos a tu ubicación con la seriedad y calidad que tu negocio merece.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>¿Cómo funcionan los pedidos de Hoodies y Camisetas personalizadas?</h4>
+                    <p>Especializamos nuestra producción en hoodies y camisetas para novios, amigos y empresas. Utilizamos técnicas de rotulado y diseño de prendas de alta gama para asegurar que cada pieza sea un reflejo fiel de tu marca o mensaje personal.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>¿Cuál es el diferencial de EMISOR Global Solutions?</h4>
+                    <p>Nuestra atención es 24/7 y trabajamos bajo un modelo de confianza personal absoluta. Ubicados en 707 Cambridge Dr, Richardson, somos tu aliado estratégico para cualquier solución publicitaria, desde el diseño gráfico más simple hasta la gestión de marca más compleja.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="images/Logo2.png" alt="EMISOR Logo" class="logo-footer">
+            <p class="footer-info"><i class="fas fa-map-marker-alt"></i> 707 Cambridge Dr, Richardson, TX 75080</p>
+            <p class="footer-info"><i class="fas fa-phone"></i> +1 214-708-3430</p>
+            <p class="footer-info"><i class="fas fa-clock"></i> Abierto las 24 Horas</p>
+            <p class="copy">&copy; 2026 EMISOR Global Solutions | lonestartexas.pages.dev</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/12147083430" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
