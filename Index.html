@@ -3,162 +3,629 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMISOR | Agencia de Publicidad & SEO Local en Texas</title>
+    <title>EMISOR 💡 | Soluciones de Impresión y Publicidad en Texas</title>
     
     <link rel="icon" type="image/png" href="images/logo2.png">
-    <link rel="apple-touch-icon" href="images/Logo2.png">
+    <meta name="description" content="Expertos en imprimir lonas publicitarias, toldos, DTF y rotulación en Richardson, TX. Servicio 24 horas.">
 
-    <meta name="description" content="Expertos en SEO Local, Rotulado de Vehículos y Marketing Digital en Richardson, Texas. Servicio a domicilio 24/7.">
-    <meta property="og:title" content="EMISOR | Publicidad & SEO Local en Texas">
-    <meta property="og:description" content="Ilumina tu marca con soluciones globales de publicidad. Atención 24/7 en Richardson y Dallas.">
-    <meta property="og:image" content="images/Texas-pone-star-emisor-publicidad-seo.png">
-    <meta property="og:url" content="https://lonestartexas.pages.dev">
-    <meta property="og:type" content="website">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary: #e2ff00; /* Amarillo Neón extraído del logo */
-            --secondary: #00e5ff; 
-            --dark: #0a0a0a;
-            --light: #ffffff;
-            --gray: #1b1b1b;
-            --accent: #25d366; 
+            --bg-body: #ffffff;
+            --bg-alt: #f8fafc;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --primary: #F59E0B; /* Amarillo Eléctrico */
+            --secondary: #10B981; /* Verde Matrix */
+            --gradient-text: linear-gradient(90deg, #F59E0B, #10B981);
+            --border: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 15px rgba(245, 158, 11, 0.4);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--dark); color: var(--light); line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-body); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Títulos Animados */
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--text-main); }
+        
+        .gradient-text {
+            background: var(--gradient-text);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
 
-        /* Navigation */
-        .navbar { background: rgba(10, 10, 10, 0.98); padding: 15px 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        strong { color: var(--primary); font-weight: 700; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        /* --- BARRA DE PROGRESO (NUEVO) --- */
+        #progress-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 4px;
+            background: transparent; z-index: 2000;
+        }
+        #progress-bar {
+            height: 100%; background: var(--gradient-text); width: 0%;
+            transition: width 0.1s;
+        }
+        
+        /* --- HEADER --- */
+        .navbar {
+            position: fixed; top: 0; width: 100%; padding: 15px 0;
+            background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border); z-index: 1000;
+        }
         .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { height: 50px; }
-        .nav-menu a { color: var(--light); text-decoration: none; margin-left: 20px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; text-transform: uppercase; }
-        .nav-menu a:hover { color: var(--primary); }
-        .btn-nav { background: var(--primary); color: var(--dark) !important; padding: 10px 20px; border-radius: 5px; }
+        .logo { height: 45px; transition: 0.3s; }
+        .logo:hover { transform: rotate(-5deg); }
+        .btn-nav { background: var(--text-main); color: #fff; padding: 10px 20px; border-radius: 6px; font-weight: 600; }
+        .btn-nav:hover { background: var(--primary); box-shadow: var(--shadow-glow); }
 
-        /* Hero Section */
-        .hero { height: 85vh; display: flex; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/Texas-pone-star-emisor-publicidad-seo.png'); background-size: cover; background-position: center; }
-        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -1px; width: 100%; }
-        .text-highlight { color: var(--primary); }
-        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 35px; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .btn-primary { background: var(--primary); color: var(--dark); padding: 18px 40px; text-decoration: none; border-radius: 5px; font-weight: 800; font-size: 1.1rem; display: inline-block; transition: 0.3s; }
+        /* --- HERO --- */
+        .hero { padding: 160px 0 100px; text-align: center; background: linear-gradient(to bottom, #fff, #f0fdf4); position: relative; overflow: hidden; }
+        /* Fondo decorativo animado */
+        .hero::before {
+            content: ''; position: absolute; top: -50px; right: -50px;
+            width: 600px; height: 600px; background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.1; border-radius: 50%; z-index: 0; animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0px); } }
+        
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; position: relative; z-index: 1; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px; position: relative; z-index: 1; }
+        .btn-cta { 
+            background: var(--primary); color: #fff; padding: 16px 40px; border-radius: 50px; font-weight: 700; font-size: 1.1rem; 
+            box-shadow: var(--shadow-glow); transition: 0.3s; position: relative; z-index: 1;
+        }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(245, 158, 11, 0.6); }
+        
+        /* --- SECTIONS GENERAL --- */
+        .section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+        .section-alt { background-color: var(--bg-alt); }
+        
+        .section-header { margin-bottom: 60px; text-align: left; }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; display: inline-block; }
+        .section-header p { color: var(--text-muted); font-size: 1.2rem; }
 
-        /* Categorías de Servicio */
-        .services-section { padding: 100px 0; background: var(--gray); }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; text-transform: uppercase; color: var(--primary); }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: var(--dark); padding: 40px; border-radius: 12px; border: 1px solid #333; transition: 0.4s; }
-        .service-card:hover { border-color: var(--primary); transform: translateY(-10px); }
-        .service-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; text-transform: uppercase; }
+        /* --- FAQ & CONTENT LAYOUT --- */
+        .content-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+        }
 
-        /* Galería */
-        .gallery { padding: 100px 0; background: var(--dark); }
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .gallery-grid img { width: 100%; height: 320px; object-fit: cover; border-radius: 8px; border: 2px solid transparent; transition: 0.3s; }
-        .gallery-grid img:hover { border-color: var(--primary); transform: scale(1.02); }
+        .content-text p { margin-bottom: 25px; color: var(--text-muted); font-size: 1.1rem; text-align: justify; }
+        
+        /* Acordeón FAQ (NUEVO) */
+        .faq-item { 
+            background: #fff; border: 1px solid var(--border); border-radius: 12px; 
+            margin-bottom: 15px; overflow: hidden; transition: 0.3s; 
+            box-shadow: var(--shadow-sm);
+        }
+        .faq-item:hover { border-color: var(--primary); box-shadow: var(--shadow-md); }
+        
+        .faq-header {
+            padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            background: #fff;
+        }
+        .faq-header h3 { font-size: 1.1rem; margin: 0; color: var(--text-main); display: flex; align-items: center; gap: 12px; }
+        .faq-header i { color: var(--secondary); font-size: 0.9rem; transition: 0.3s; }
+        .faq-header.active i { transform: rotate(180deg); }
+        
+        .faq-body {
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 20px;
+            background: #fafafa;
+        }
+        .faq-body p { margin: 0; padding: 20px 0; color: var(--text-muted); font-size: 0.95rem; }
 
-        /* FAQ Section */
-        .faq-section { padding: 100px 0; background: var(--gray); }
-        .faq-container { max-width: 900px; margin: 0 auto; }
-        .faq-item { background: var(--dark); padding: 35px; border-radius: 15px; margin-bottom: 30px; border-left: 6px solid var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .faq-item h4 { color: var(--primary); margin-bottom: 15px; font-size: 1.4rem; }
+        /* Image Styling con Hover Zoom (NUEVO) */
+        .section-image { 
+            width: 100%; border-radius: 16px; overflow: hidden; 
+            box-shadow: var(--shadow-lg); position: relative; cursor: pointer;
+        }
+        .section-image img { 
+            width: 100%; height: auto; display: block; 
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .section-image:hover img { transform: scale(1.1); }
+        
+        .image-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3); opacity: 0; transition: 0.3s;
+            display: flex; justify-content: center; align-items: center;
+        }
+        .section-image:hover .image-overlay { opacity: 1; }
+        .image-overlay span {
+            background: #fff; color: #000; padding: 10px 20px; border-radius: 50px;
+            font-weight: 700; font-size: 0.9rem; transform: translateY(20px); transition: 0.3s;
+        }
+        .section-image:hover .image-overlay span { transform: translateY(0); }
 
-        /* Footer */
-        footer { padding: 80px 0; text-align: center; background: var(--dark); border-top: 1px solid #333; }
-        .footer-info { color: #888; margin-bottom: 10px; font-size: 1rem; }
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 35px; z-index: 1000; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        /* --- KEYWORD BADGES --- */
+        .keyword-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+        .badge { 
+            background: #f3f4f6; padding: 8px 16px; border-radius: 20px; 
+            font-size: 0.85rem; color: #374151; font-weight: 600; 
+            border: 1px solid transparent; transition: 0.2s;
+        }
+        .badge:hover { border-color: var(--primary); color: var(--primary); }
+        .badge.highlight { background: #ecfdf5; color: var(--secondary); border: 1px solid #a7f3d0; }
 
+        /* --- FOOTER --- */
+        footer { background: #111827; color: #fff; padding: 60px 0 20px; position: relative; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .footer-links a { display: block; color: #9ca3af; margin-bottom: 10px; transition: 0.2s; }
+        .footer-links a:hover { color: #fff; padding-left: 5px; }
+
+        /* --- FLOATING WHATSAPP PULSANTE (NUEVO) --- */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
+            width: 65px; height: 65px; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; font-size: 32px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 999;
+            animation: pulse 2s infinite; /* Animación de pulso */
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .nav-menu { display: none; }
+            .content-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- BARRA DE PROGRESO -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Header -->
     <header class="navbar">
         <div class="container">
             <img src="images/Logo2.png" alt="EMISOR Logo" class="logo">
-            <nav class="nav-menu">
-                <a href="#inicio">Inicio</a>
-                <a href="#servicios">Categorías</a>
-                <a href="#proyectos">Trabajos</a>
-                <a href="#faq">Preguntas</a>
-                <a href="https://wa.me/12147083430" class="btn-nav">Contacto Directo</a>
+            <nav class="nav-links">
+                <a href="#publicidad" style="font-weight:600;">Lonas</a>
+                <a href="#arquitectura" style="font-weight:600;">Toldos</a>
+                <a href="#imprenta" style="font-weight:600;">Imprenta</a>
+                <a href="#textil" style="font-weight:600;">Textil</a>
             </nav>
+            <a href="https://wa.me/12147083430" class="btn-nav">Cotizar Ahora</a>
         </div>
     </header>
 
-    <section id="inicio" class="hero">
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
-            <h1>Ilumina tu Marca en <span class="text-highlight">Texas</span></h1>
-            <p>Especialistas en soluciones globales de publicidad personalizada. Desde SEO Local hasta rotulados de alto impacto, abiertos las 24 horas.</p>
-            <a href="https://wa.me/12147083430" class="btn-primary">¡COTIZAR MI PROYECTO!</a>
+            <h1 class="gradient-text">Impulsa tu Marca con <br>Soluciones Reales</h1>
+            <p>Desde gigantografías masivas hasta el detalle más pequeño en tu papel de presentación. Somos tus socios estratégicos en Texas.</p>
+            <a href="https://wa.me/12147083430" class="btn-cta">Solicitar Presupuesto</a>
         </div>
     </section>
 
-    <section id="servicios" class="services-section">
+    <!-- BLOQUE 1: PUBLICIDAD EXTERIOR -->
+    <section id="publicidad" class="section">
         <div class="container">
-            <h2 class="section-title">Servicios Destacados</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Administración de Proyectos</h3>
-                    <p>Gestión integral de campañas publicitarias en Richardson y Dallas.</p>
+            <div class="section-header">
+                <h2 class="gradient-text">Publicidad Exterior y Formatos Gigantes</h2>
+                <p>El tamaño sí importa cuando se trata de captar la atención.</p>
+            </div>
+            
+            <div class="content-grid">
+                <!-- Columna Texto y FAQ -->
+                <div class="content-left">
+                    <div class="content-text">
+                        <p>En el mundo del marketing físico, la visibilidad es clave. Nos especializamos en llevar tu mensaje a través de <strong>lonas publicitarias a medida</strong> que desafían los límites convencionales. Si buscas <strong>lonas para fachadas</strong> de alto impacto o estructuras con <strong>lona mesh para obras</strong>, tenemos la solución técnica.</p>
+                    </div>
+
+                    <!-- Acordeón FAQs -->
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-question-circle"></i> ¿Qué tan resistentes son sus lonas al sol?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Muchísima. Fabricamos cada <strong>lona de PVC impermeable</strong> con tratamientos UV especiales, garantizando <strong>banners resistentes al sol</strong> que mantienen sus colores vibrantes por años.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-bolt"></i> ¿Tienen servicio de urgencia para eventos?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Sí. Si la fecha de tu evento te apremia, nuestro servicio de <strong>gigantografías urgentes</strong> y <strong>lonas urgentes 24h</strong> asegura que tu campaña esté lista a tiempo.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-tools"></i> ¿Cómo se instalan las pancartas?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Entregamos <strong>lonas con ojales reforzados</strong> para fácil instalación o sistemas portátiles como el <strong>soporte banner araña</strong> y <strong>banners roll up para ferias</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="keyword-cloud">
+                        <span class="badge highlight">lona frontal para anuncios</span>
+                        <span class="badge highlight">lona blackout doble cara</span>
+                        <span class="badge">pancartas inmobiliarias</span>
+                        <span class="badge">lona precio m2</span>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <h3>SEO LOCAL</h3>
-                    <p>Dominio de Google Business Profile para resultados reales en Texas.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Impresiones y Rotulado</h3>
-                    <p>Calidad premium en stickers, banners y rotulado de camisetas personalizadas.</p>
+
+                <!-- Columna Imagen con Hover -->
+                <div class="section-image">
+                    <img src="images/Publicidad-impresiones-rotulados-texas-fotos.png" alt="Lona Publicitaria">
+                    <div class="image-overlay"><span>Ver Proyectos</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="proyectos" class="gallery">
+    <!-- BLOQUE 2: ARQUITECTURA TEXTIL -->
+    <section id="arquitectura" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Portafolio de Impacto</h2>
-            <div class="gallery-grid">
-                <img src="images/Publicidad-impresiones-rotulados-texas-fotos.png" alt="Publicidad Texas">
-                <img src="images/Rotulados-stikers-gif-hoodies-tshirts.png" alt="Apparel Texas">
-                <img src="images/Seo-site-diseño-logos-stikers-emisor-lonas-vinil-rotulos-texas.png" alt="SEO Texas">
-                <img src="images/Texas-pone-star-emisor-publicidad-seo.png" alt="Estrategia Texas">
+            <div class="section-header">
+                <h2 class="gradient-text">Arquitectura Textil y Soluciones de Exterior</h2>
+                <p>Protección, estilo y confort para espacios abiertos.</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="section-image">
+                    <img src="images/Texas-pone-star-emisor-publicidad-seo.png" alt="Toldos y Velas">
+                    <div class="image-overlay"><span>Ver Catálogo</span></div>
+                </div>
+                
+                <div class="content-left">
+                    <div class="content-text">
+                        <p>Transforma tus espacios abiertos. Somos expertos en <strong>toldos para hostelería</strong>, diseñando ambientes únicos para <strong>terrazas de bares</strong>. ¿Buscas tecnología? Nuestros <strong>toldos retractables motorizados</strong> ofrecen confort con un solo clic.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-sun"></i> ¿Qué opciones hay para sombra moderna?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Recomendamos la <strong>vela de sombra transpirable</strong> y las <strong>velas triangulares</strong>, que proporcionan frescura sin sacrificar el estilo estético.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-cloud-rain"></i> ¿Sirven para lluvia?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Absolutamente. Ofrecemos <strong>lona para piscinas</strong> de alta resistencia y <strong>toldos para lluvia</strong> fabricados con tejidos hidrófugos de última generación.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-truck"></i> ¿Hacen lonas para camiones?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Sí, atendemos al sector logístico con <strong>lona para camiones</strong> de uso rudo, <strong>lona para estanques</strong> y <strong>lona transparente para terrazas</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="keyword-cloud">
+                        <span class="badge highlight">toldos fijos para locales</span>
+                        <span class="badge highlight">pérgolas de lona tensada</span>
+                        <span class="badge">lona de repuesto para toldos</span>
+                        <span class="badge">cortinas de lona exterior</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="faq-section">
+    <!-- BLOQUE 3: IMPRENTA COMERCIAL -->
+    <section id="imprenta" class="section">
         <div class="container">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <h4>¿Ofrecen servicio a domicilio?</h4>
-                    <p>Sí, ofrecemos atención 100% personalizada y entrega a domicilio en toda el área de Texas.</p>
+            <div class="section-header">
+                <h2 class="gradient-text">Imprenta Comercial y Papelería</h2>
+                <p>La imagen de tu empresa comienza en el papel.</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-left">
+                    <div class="content-text">
+                        <p>En nuestra imprenta, garantizamos <strong>tarjetas de visita rápidas</strong> con acabados que impresionan. Potencia tu alcance con <strong>flyers a doble cara</strong> y <strong>trípticos personalizados</strong>.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-book"></i> ¿Imprimen catálogos de productos?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Claro. Nuestra <strong>impresión de catálogos de productos</strong> y <strong>carpetas con solapa</strong> te darán ese toque profesional que ayuda a cerrar ventas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-utensils"></i> ¿Tienen soluciones para restaurantes?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Sí. Producimos <strong>menús resistentes al agua</strong> y <strong>cartas de bar laminadas</strong>, diseñadas específicamente para el uso rudo diario.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-tags"></i> ¿Qué tal para productos de retail?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Manejamos <strong>etiquetas en rollo</strong> industriales y <strong>pegatinas redondas</strong> para packaging. También <strong>vinilo para escaparates</strong> para atraer clientes.</p>
+                        </div>
+                    </div>
+
+                    <div class="keyword-cloud">
+                        <span class="badge highlight">facturas autocopiativas</span>
+                        <span class="badge highlight">sobres con logo</span>
+                        <span class="badge">carteles cartulina A3</span>
+                        <span class="badge">calendarios de empresa</span>
+                    </div>
                 </div>
-                <div class="faq-item">
-                    <h4>¿Cuál es su horario de atención?</h4>
-                    <p>Estamos disponibles las 24 horas del día para atender tus proyectos urgentes.</p>
+
+                <div class="section-image">
+                    <img src="images/Seo-site-diseño-logos-stikers-emisor-lonas-vinil-rotulos-texas.png" alt="Imprenta">
+                    <div class="image-overlay"><span>Ver Acabados</span></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- BLOQUE 4: TEXTIL Y MERCHANDISING -->
+    <section id="textil" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="gradient-text">Personalización Textil y Merchandising</h2>
+                <p>Lleva tu diseño a cualquier prenda con técnicas de vanguardia.</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="section-image">
+                    <img src="images/Rotulados-stikers-gif-hoodies-tshirts.png" alt="Textil DTF">
+                    <div class="image-overlay"><span>Ver Técnicas</span></div>
+                </div>
+                
+                <div class="content-left">
+                    <div class="content-text">
+                        <p>Somos pioneros en <strong>DTF por metros</strong>, la tecnología que permite estampados full color. Si buscas precio, la <strong>serigrafía corporativa</strong> es ideal para <strong>polos promocionales</strong>.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-tshirt"></i> ¿Qué técnica es mejor para logos?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Para uniformes de trabajo, recomendamos <strong>camisetas con logo bordado</strong>. Para diseños complejos, nuestra <strong>impresión digital textil</strong> sobre algodón.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-gift"></i> ¿Qué regalos corporativos ofrecen?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Nuestras <strong>tote bags publicitarias</strong> y <strong>gorras económicas</strong> son clásicos. También personalizamos <strong>tazas para regalo</strong> y <strong>sudaderas personalizadas</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-running"></i> ¿Hacen uniformes deportivos?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Sí, ofrecemos <strong>uniformes deportivos</strong> completos con numeración oficial y <strong>playeras familiares</strong> con diseños totalmente personalizados.</p>
+                        </div>
+                    </div>
+
+                    <div class="keyword-cloud">
+                        <span class="badge highlight">vinilo textil laboral</span>
+                        <span class="badge highlight">parches bordados</span>
+                        <span class="badge">remeras para bandas</span>
+                        <span class="badge">camisetas para despedidas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE 5: URGENCIA Y LOCAL -->
+    <section id="local" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="gradient-text">Servicios de Urgencia y Localización</h2>
+                <p>Resultados inmediatos cuando el tiempo es oro.</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-left" style="grid-column: 1 / -1;">
+                    <div class="content-text">
+                        <p>Sabemos que a veces necesitas las cosas "para ayer". Si buscas una <strong>imprenta de lonas cerca</strong> o un <strong>servicio de fotocopias 24 horas</strong>, estamos estratégicamente ubicados.</p>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <div class="faq-item">
+                            <div class="faq-header">
+                                <h3><i class="fas fa-map-marker-alt"></i> ¿Están cerca de mí?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-body">
+                                <p>Somos una <strong>tienda de lonas local</strong>. Ofrecemos asesoría personalizada y somos la <strong>imprenta rápida para Pymes</strong> que entiende tus necesidades.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-header">
+                                <h3><i class="fas fa-clock"></i> ¿Pueden hacer tarjetas hoy?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-body">
+                                <p>Sí. Nuestras <strong>tarjetas de visita hoy</strong> salen urgentes. También manejamos <strong>rotulación de vehículos comercial</strong> para promocionarte mientras conduces.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-header">
+                                <h3><i class="fas fa-drafting-compass"></i> ¿Imprimen planos?</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-body">
+                                <p>Expertos en <strong>impresión de planos</strong> para arquitectura y <strong>encuadernación de tesis</strong> con acabados de lujo para estudiantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOQUE 6: ESPECIALIZADOS -->
+    <section id="especializados" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="gradient-text">Impresión Especializada y Materiales Rígidos</h2>
+                <p>Nuevas fronteras: impresión sobre cualquier superficie.</p>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-left">
+                    <div class="content-text">
+                        <p>La <strong>impresión UV rígidos</strong> nos permite imprimir directamente sobre madera, metal o acrílico. Para exposiciones, recomendamos la <strong>impresión cartón pluma</strong>.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-cube"></i> ¿Pueden imprimir en madera?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Sí, la tecnología UV permite una adherencia asombrosa en madera, metal y acrílico. También hacemos <strong>fotos en lienzo con bastidor de madera</strong> para decoración.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-shield-alt"></i> ¿Tienen etiquetas de seguridad?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Fabricamos <strong>etiquetas térmicas</strong> para logística y <strong>pegatinas de seguridad con hologramas</strong> para proteger tu marca.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <h3><i class="fas fa-leaf"></i> ¿Hay opciones ecológicas?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-body">
+                            <p>Estamos comprometidos con el planeta: ofrecemos <strong>papel Kraft para packaging</strong> y <strong>folletos papel reciclado</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="keyword-cloud">
+                        <span class="badge highlight">vinilo coche microperforado</span>
+                        <span class="badge highlight">expositores de cartón</span>
+                        <span class="badge">imanes para nevera</span>
+                        <span class="badge">posters alta resolución</span>
+                    </div>
+                </div>
+
+                <div class="section-image">
+                    <img src="images/Texas-pone-star-emisor-publicidad-seo.png" alt="Materiales Especializados">
+                    <div class="image-overlay"><span>Ver Materiales</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <img src="images/logo2.png" alt="EMISOR Logo" class="logo-footer">
-            <p class="footer-info"><i class="fas fa-map-marker-alt"></i> 707 Cambridge Dr, Richardson, TX 75080</p>
-            <p class="footer-info"><i class="fas fa-phone"></i> +1 214-708-3430</p>
-            <p class="copy">&copy; 2026 EMISOR Global Solutions</p>
+            <div class="footer-grid">
+                <div>
+                    <h4>EMISOR Global Solutions</h4>
+                    <p style="color:#9ca3af; margin-top:10px;">707 Cambridge Dr, Richardson, TX 75080</p>
+                    <p style="color:#9ca3af;">+1 214-708-3430</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#publicidad">Lonas y Publicidad</a>
+                    <a href="#arquitectura">Toldos</a>
+                    <a href="#imprenta">Imprenta</a>
+                    <a href="#textil">Textil</a>
+                </div>
+            </div>
+            <div style="text-align:center; border-top:1px solid #374151; padding-top:20px; font-size:0.8rem; color:#6b7280;">
+                &copy; 2026 EMISOR Global Solutions.
+            </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/12147083430" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/12147083430" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
+    <!-- SCRIPTS -->
+    <script>
+        // 1. Barra de Progreso de Lectura
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+
+        // 2. Lógica del Acordeón (FAQ)
+        const faqHeaders = document.querySelectorAll('.faq-header');
+        faqHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const body = header.nextElementSibling;
+                // Toggle clase active para rotar icono
+                header.classList.toggle('active');
+                
+                // Animación de altura
+                if (header.classList.contains('active')) {
+                    body.style.maxHeight = body.scrollHeight + "px";
+                } else {
+                    body.style.maxHeight = 0;
+                }
+
+                // Opcional: Cerrar otros abiertos (Acordeón estricto)
+                /* 
+                faqHeaders.forEach(otherHeader => {
+                    if (otherHeader !== header && otherHeader.classList.contains('active')) {
+                        otherHeader.classList.remove('active');
+                        otherHeader.nextElementSibling.style.maxHeight = 0;
+                    }
+                });
+                */
+            });
+        });
+    </script>
 </body>
 </html>
